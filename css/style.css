@@ -266,3 +266,122 @@ header {
     font-size: 1rem;
   }
 }
+
+.skill-item {
+  position: relative;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.skill-item img {
+  object-fit: cover;
+  height: 100%;
+  transition: var(--transition);
+}
+
+.skill-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: hsl(225, 29%, 35%, 0.8);
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.skill-item__overlay--text {
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.skill-item:hover img {
+  transform: scale(1.2);
+}
+
+.skill-item:hover .skill-item__overlay {
+  background: hsl(225, 29%, 35%, 0.9);
+}
+
+.skill-item:hover .skill-item__overlay--text {
+  color: var(--clr-secondary-1);
+}
+
+.skills {
+  margin: 0.5rem;
+}
+.skills-container {
+  display: grid;
+  grid-template-rows: repeat(9, 15rem);
+  gap: 0.5rem;
+  grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+}
+
+@media screen and (min-width: 600px) {
+  .skills-container {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-rows: repeat(6, 15rem);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "a1 a2"
+      "a3 a2"
+      "a4 a4"
+      "a5 a6"
+      "a5 a7"
+      "a8 a9";
+  }
+}
+@media screen and (min-width: 992px) {
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "a1 a1 a2"
+      "a3 a4 a4"
+      "a5 a5 a6"
+      "a5 a5 a6"
+      "a7 a8 a6"
+      "a7 a9 a9";
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .skills-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "a1 a1 a2 a3"
+      "a4 a5 a5 a6"
+      "a7 a8 a9 a6";
+  }
+}
+
+.skill-item:nth-of-type(1) {
+  grid-area: a1;
+}
+.skill-item:nth-of-type(2) {
+  grid-area: a2;
+}
+.skill-item:nth-of-type(3) {
+  grid-area: a3;
+}
+.skill-item:nth-of-type(4) {
+  grid-area: a4;
+}
+.skill-item:nth-of-type(5) {
+  grid-area: a5;
+}
+.skill-item:nth-of-type(6) {
+  grid-area: a6;
+}
+.skill-item:nth-of-type(7) {
+  grid-area: a7;
+}
+.skill-item:nth-of-type(8) {
+  grid-area: a8;
+}
+.skill-item:nth-of-type(9) {
+  grid-area: a9;
+}
